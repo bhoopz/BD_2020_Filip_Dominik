@@ -1,2 +1,0 @@
-Tematem mojego projektu jest sklep internetowy z albumami muzycznymi, projekt wykonuje sam. 
-Projekt będzie się składał z sześciu tabel(5+1 łącząca), między którymi użyłem głównie relacji jeden do wielu i relacji wiele do wielu w przypadku zamówień i albumów. Jeśli chodzi o funkconalność to wykorzystując PL/SQLa chciałbym zrobić system sortujący i filtrujący na stronie(sortowanie po cenie, sortowanie alfabetyczne po tytule albumu, filtrowanie po cenie,gatunku bądź wykonawcy).
