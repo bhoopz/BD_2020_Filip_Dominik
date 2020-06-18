@@ -13,24 +13,29 @@ CREATE TABLE albumy
    id_gatunku 		NUMBER(11) NOT NULL,
    rok 				NUMBER(4) NOT NULL,
    cena 			NUMBER(4,2) NOT NULL,
+   img			VARCHAR2(25) NOT NULL,
 		CONSTRAINT id_albumu_pk PRIMARY KEY (id_albumu));
 		
 INSERT INTO albumy VALUES
-(1, 'Chronic2001', 1, 1, 1999, 17.99);
+(1, 'Chronic2001', 4, 3, 1999, 17.99,'drdre.jpg');
 INSERT INTO albumy VALUES
-(2, 'The Singles Album', 1, 1, 1991, 17.99);
+(2, 'The Singles Album', 2, 5, 1991, 17.99,'krawczyk.jpg');
 INSERT INTO albumy VALUES
-(3, 'Hypnotize', 1, 1, 2005, 40.99);
+(3, 'Hypnotize', 1, 1, 2005, 40.99,'hypnotize.jpg');
 INSERT INTO albumy VALUES
-(4, 'Mezmerize', 1, 1, 2005, 40.99);
+(4, 'Mezmerize', 1, 1, 2005, 40.99,'mezmerize.jpg');
 INSERT INTO albumy VALUES
-(5, 'One More Light', 1, 1, 2017, 49.99);
+(5, 'One More Light', 3, 1, 2017, 49.99,'oml.jpg');
+INSERT INTO albumy VALUES
+(6, 'Małomiasteczkowy', 5, 2, 2018, 19.99,'podsiadlo.jpg');
+INSERT INTO albumy VALUES
+(8, 'Dzieci Duchy', 6, 4, 2019, 34.99,'szpaku.jpg');
 
 
 DROP TABLE gatunek CASCADE CONSTRAINTS;
 CREATE TABLE gatunek 
 (id_gatunku NUMBER(11) 		NOT NULL,
-	nazwa varchar(25) 		NOT NULL,
+	nazwaGatunku varchar(25) 		NOT NULL,
 		CONSTRAINT id_gatunku_pk PRIMARY KEY (id_gatunku));
 
 
@@ -38,11 +43,18 @@ INSERT INTO gatunek VALUES
 (1, 'rock');
 INSERT INTO gatunek VALUES
 (2, 'pop');
+INSERT INTO gatunek VALUES
+(3, 'hip-hop');
+INSERT INTO gatunek VALUES
+(4, 'rap');
+INSERT INTO gatunek VALUES
+(5, 'funk');
 
 DROP TABLE klienci CASCADE CONSTRAINTS;
 CREATE TABLE klienci
 (id_klienta NUMBER(11) 				NOT NULL,
 	nazwa_uzytkownika varchar(25)   NOT NULL,
+	haslo varchar(25)				NOT NULL,
 	imie varchar(25) 				NOT NULL,
     nazwisko varchar(25) 			NOT NULL,
     email varchar(25) 				NOT NULL,
@@ -50,7 +62,7 @@ CREATE TABLE klienci
 		CONSTRAINT id_klienta_pk PRIMARY KEY (id_klienta));
 		
 INSERT INTO klienci VALUES
-(1, 'tester', 'janusz', 'kowalski', 'test@op.pl', 'Testowo');
+(1, 'tester','tester', 'janusz', 'kowalski', 'test@op.pl', 'Testowo');
 
 
 DROP TABLE wykonawcy CASCADE CONSTRAINTS;
@@ -63,6 +75,14 @@ INSERT INTO wykonawcy VALUES
 (1, 'System Of A Down');
 INSERT INTO wykonawcy VALUES
 (2, 'Krzysztof Krawczyk');
+INSERT INTO wykonawcy VALUES
+(3, 'Linkin Park');
+INSERT INTO wykonawcy VALUES
+(4, 'Dr. Dre');
+INSERT INTO wykonawcy VALUES
+(5, 'Dawid Podsiadło');
+INSERT INTO wykonawcy VALUES
+(6, 'Szpaku');
 
 DROP TABLE zamowienia CASCADE CONSTRAINTS;
 CREATE TABLE zamowienia
@@ -76,7 +96,7 @@ CREATE TABLE zamowienia
 INSERT INTO zamowienia VALUES
 (1, 1, 2, 1, 'oczekiwanie');
 INSERT INTO zamowienia VALUES
-(2, 1, 5, 2, 'wysłano');
+(2, 1, 5, 2, 'wyslano');
 
 
 DROP TABLE zamowienia_albumy CASCADE CONSTRAINTS;
