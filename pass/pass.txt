@@ -1,0 +1,5 @@
+login: 'system'
+hasło: 'oracle'
+sid: '//localhost/orcl'
+
+Login/hasło do panelu administratora: admin/admin
